@@ -4,9 +4,9 @@ import org.itclinicaltest.models.textprocessor.ProcessType;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 import java.util.Optional;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class ValidatorFactoryImplTest {
 
@@ -29,5 +29,18 @@ public class ValidatorFactoryImplTest {
         // Then
         assertThat(validatorOptional).isPresent();
         assertThat(validatorOptional.get()).isInstanceOf(AllUpperCaseValidator.class);
+    }
+
+    @Test
+    public void shouldReturnUppercaseNumberAndSpecialCharValidatorWhenOnlyUsingUppercaseType() {
+        // Given
+        ProcessType type = ProcessType.UPPERCASE_NUMBERS_SPECIAL_CHAR;
+
+        // When
+        Optional<Validator> validatorOptional = validatorFactory.getValidator(type);
+
+        // Then
+        assertThat(validatorOptional).isPresent();
+        assertThat(validatorOptional.get()).isInstanceOf(UpperCaseNumbersAndSpecialCharsValidator.class);
     }
 }

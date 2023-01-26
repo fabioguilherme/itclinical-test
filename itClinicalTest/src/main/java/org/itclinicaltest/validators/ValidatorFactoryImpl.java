@@ -12,10 +12,13 @@ public class ValidatorFactoryImpl implements ValidatorFactory {
     private final Map<ProcessType, Validator> registeredValidators;
 
     public ValidatorFactoryImpl() {
-         Map<ProcessType, Validator> map = new HashMap<>();
+        Map<ProcessType, Validator> map = new HashMap<>();
 
         Validator upperCaseValidator = new AllUpperCaseValidator();
+        Validator upperSpecialCharNumbers = new UpperCaseNumbersAndSpecialCharsValidator();
+
         map.put(upperCaseValidator.getProcessType(), upperCaseValidator);
+        map.put(upperSpecialCharNumbers.getProcessType(), upperSpecialCharNumbers);
 
         this.registeredValidators = Collections.unmodifiableMap(map);
     }

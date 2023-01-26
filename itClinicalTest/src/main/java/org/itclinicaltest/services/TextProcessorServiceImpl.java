@@ -1,7 +1,6 @@
 package org.itclinicaltest.services;
 
 
-import com.sun.deploy.util.StringUtils;
 import org.itclinicaltest.models.textprocessor.ProcessType;
 import org.itclinicaltest.models.textprocessor.TextProcessorResponse;
 import org.itclinicaltest.validators.Validator;
