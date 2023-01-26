@@ -1,6 +1,6 @@
 package org.itclinicaltest.models.textprocessor;
 
 public enum ProcessType {
-    ALL_LETTERS,
+    UPPERCASE_NUMBERS_SPECIAL_CHAR,
     ONLY_UPPERCASE
 }
