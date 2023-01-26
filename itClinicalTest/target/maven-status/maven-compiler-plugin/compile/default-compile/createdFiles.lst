@@ -1,7 +1,0 @@
-org\itclinicaltest\services\MathServiceImpl.class
-org\itclinicaltest\services\MathService.class
-org\itclinicaltest\services\ReadConsoleServiceImpl.class
-org\itclinicaltest\services\Orchestrator.class
-org\itclinicaltest\Main.class
-org\itclinicaltest\services\OrchestratorImpl.class
-org\itclinicaltest\services\ReaderConsoleService.class
