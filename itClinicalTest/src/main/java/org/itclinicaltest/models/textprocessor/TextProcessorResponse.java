@@ -1,11 +1,12 @@
 package org.itclinicaltest.models.textprocessor;
 
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class TextProcessorResponse {
 
     private final String outputString;
-    private final Map<String, Integer> lettersGroup;
+    private final Map<Character, Integer> lettersGroup;
 
     private TextProcessorResponse(Builder builder) {
         this.outputString = builder.outputString;
@@ -16,21 +17,19 @@ public class TextProcessorResponse {
         return outputString;
     }
 
-    public Map<String, Integer> getLettersGroup() {
+    public Map<Character, Integer> getLettersGroup() {
         return lettersGroup;
     }
 
     @Override
     public String toString() {
-        return "TextProcessorResponse{" +
-                "outputString='" + outputString + '\'' +
-                ", lettersGroup=" + lettersGroup +
-                '}';
+        return "outputString = '" + outputString + "\n" +
+                lettersGroup.entrySet().stream().map(entry -> entry.getKey() + " = " + entry.getValue() + "\n").collect(Collectors.joining());
     }
 
     public static final class Builder {
         private String outputString;
-        private Map<String, Integer> lettersGroup;
+        private Map<Character, Integer> lettersGroup;
 
         private Builder() {
         }
@@ -52,7 +51,7 @@ public class TextProcessorResponse {
             return this;
         }
 
-        public Builder lettersGroup(Map<String, Integer> lettersGroup) {
+        public Builder lettersGroup(Map<Character, Integer> lettersGroup) {
             this.lettersGroup = lettersGroup;
             return this;
         }
