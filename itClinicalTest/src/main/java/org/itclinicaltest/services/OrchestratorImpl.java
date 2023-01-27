@@ -59,8 +59,6 @@ public class OrchestratorImpl implements Orchestrator {
 
                 System.out.printf(RESPONSE_MESSAGE, response);
 
-                System.out.println(QUESTION_CONTINUE);
-
                 continueProcessing = "yes".equals(readContinueString());
 
                 if (continueProcessing) {
