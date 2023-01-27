@@ -42,7 +42,7 @@ public class TextProcessorServiceImplTest {
         // Then
         assertThat(response).isNotNull();
         assertThat(response.getOutputString()).isEmpty();
-        assertThat(response.getLettersGroup()).isNull();
+        assertThat(response.getLettersGroup()).isEmpty();
     }
 
     @Test
@@ -58,7 +58,7 @@ public class TextProcessorServiceImplTest {
         // Then
         assertThat(response).isNotNull();
         assertThat(response.getOutputString()).isEmpty();
-        assertThat(response.getLettersGroup()).isNull();
+        assertThat(response.getLettersGroup()).isEmpty();
     }
 
 

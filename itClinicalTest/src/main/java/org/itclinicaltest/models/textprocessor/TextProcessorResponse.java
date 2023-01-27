@@ -1,5 +1,6 @@
 package org.itclinicaltest.models.textprocessor;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -23,7 +24,7 @@ public class TextProcessorResponse {
 
     @Override
     public String toString() {
-        return "outputString = '" + outputString + "\n" +
+        return "outputString = '" + outputString + "'\n" +
                 lettersGroup.entrySet().stream().map(entry -> entry.getKey() + " = " + entry.getValue() + "\n").collect(Collectors.joining());
     }
 
@@ -42,6 +43,7 @@ public class TextProcessorResponse {
 
             Builder builder = new Builder();
             builder.outputString = "";
+            builder.lettersGroup = new HashMap<>();
 
             return builder;
         }
