@@ -1,6 +1,6 @@
 package org.itclinicaltest.services;
 
-import org.itclinicaltest.error.ValidatorNotFoundException;
+import org.itclinicaltest.error.NoProcessTypeFoundException;
 import org.itclinicaltest.models.textprocessor.ProcessType;
 
 import java.io.IOException;
@@ -11,5 +11,5 @@ public interface ReaderConsoleService {
 
     int readNumberFromConsole() throws IOException, NumberFormatException;
 
-    ProcessType readProcessTypeFromConsole() throws IOException, ValidatorNotFoundException;
+    ProcessType readProcessTypeFromConsole() throws IOException, NoProcessTypeFoundException;
 }
